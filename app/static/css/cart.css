@@ -1,0 +1,165 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.text-white {
+    color: rgb(0, 0, 0);
+}
+
+/* Cart table styles */
+.cart {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Product image and description */
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.main img {
+    width: 145px;
+    height: 98px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.des {
+    flex: 1;
+}
+
+/* Checkout section */
+.checkout {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtotal,
+.cart-total {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.proceed-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.proceed-btn:hover {
+    background-color: #2980b9;
+}
+
+
+/* Common styles for user details section */
+.user-details {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to a new line */
+    justify-content: center; /* Center align items horizontally */
+    width: max-content;
+}
+
+/* User card */
+.user-card {
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically on small screens */
+    gap: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: max-content;
+
+
+    /* Additional styles for larger screens */
+    @media (min-width: 768px) {
+        flex-direction: row; /* Revert to horizontal layout */
+        width: auto; /* Reset width for larger screens */
+        width: max-content; /* Occupy full width on small screens */
+
+    }
+}
+
+
+/* User info text */
+.user-info {
+    margin: 5px 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .main img {
+        width: 100px;
+        height: 68px;
+    }
+}
+
+
+
+
+
+.userDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancelbtn{
+    display: inline-block;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}

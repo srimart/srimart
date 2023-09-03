@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block csslink %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="pcontainer">
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="submit-btn" type="submit" onclick="window.location.href='/cart'">add</button>
+
+    </form>
+    {% if u %}
+    <div class="user-details">
+        <div class="user-card">
+            <p class="user-info">name : {{ u.name }}</p>
+            <p class="user-info">Locality : {{ u.locality }}</p>
+            <p class="user-info">city : {{ u.city }}</p>
+            <p class="user-info">Zipcode : {{ u.zipcode }}</p>
+            <p class="user-info">state :{{ u.state }}</p>
+            <p class="user-info">Phonenumber : {{ u.phoneNumber }}</p>
+            <button class="delete-btn"> <a href="/userdetailsdelete/{{u.id}}" style="text-decoration: none; color: white;">Delete</a></button>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

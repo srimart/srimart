@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="home">
+    <div class="home_page ">
+        <div class="home_img ">
+            <img src="{% static 'img/bg.jpg' %}" alt="img ">
+        </div>
+        <div class="home_txt ">
+            <!-- <div class="home_label ">
+                <p>A specialist label creating luxury essentials. Ethically crafted<br>with an unwavering commitment to exceptional quality.</p>
+            </div> -->
+            <div class="home_social_icons">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-pinterest'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="sellers">
+    <div class="seller container">
+        <h2>Top Sales</h2>
+        <div class="best-seller">
+            {% for p in p %}
+            <div class="best-p1">
+                <a href="/productdetails/{{p.id}}" style="color: black; text-decoration: none; display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center; align-items: center; background-color: rgb(255, 255, 255); ">
+                    <img src="{{ p.productimage1.url }}" alt="{{ p.productimage1.url }} Image 1">
+                    <div class="best-p1-txt">
+                    <div class="name-of-p">
+                        <p style="font-size: 20px; font-weight: bold;" >{{p.name}}
+                        </p>
+                    </div>
+                   
+                    <div class="price">
+                        Rs.{{p.prize}}/-
+              
+                    </div>
+                
+                    <!-- <div class="add-cart">
+                        <button>Add To Cart</button>
+                    </div> -->
+                </div>
+            </a>
+                
+            </div>
+    {% endfor %}
+        </div>
+    </div>
+ 
+</section>
+
+
+
+
+
+{% endblock %}

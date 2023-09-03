@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block csslink %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="mt-5">
+    <h1 style="text-align: center; font-size: xx-large; letter-spacing: 10px;">CART</h1>
+
+    <div class="container">
+
+
+
+        <div class="cart">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"class="text-white">Product</th>
+                        <th scope="col"class="text-white">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+  {% for c in cart %}
+
+                    <tr>
+                        <td>
+                            <div class="main">
+                                <div class="d-flex">
+                 <!--W=145 H=98--> <img src="{{c.productimage1.url}}"alt="">
+                                </div>
+                                <div class="des">
+                                    <h5>{{ c.name }}</h5>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>Rs.{{c.prize}}/-</h3>
+                        </td>
+                        <td>
+                             <a href="/deletecartproduct/{{c.id}}" class="cancelbtn">Delete</a>
+                        </td>
+                       
+                        
+                    </tr>
+
+                    <!----->
+                  {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</section>
+
+<div class="userDetailsContainer" >
+
+    <div style="background-color: rgb(235, 235, 235); width: max-content; padding: 15px; border-radius: 5px; margin: 10px; ">
+        <label for="cashOnDelivery">Cash on Delivery:</label>
+        <input type="radio" checked>
+    </div>
+
+    <div class="user-details">
+        <div class="user-card">
+            <p class="user-info">{{ u.name }}</p>
+            <p class="user-info">{{ u.locality }}</p>
+            <p class="user-info">{{ u.city }}</p>
+            <p class="user-info">{{ u.zipcode }}</p>
+            <p class="user-info">{{ u.state }}</p>
+            <p class="user-info">{{ u.phoneNumber }}</p>
+            <input type="radio" checked>
+
+        </div>
+    </div>
+
+</div>
+<div class="col-lg-4 offset-lg-4">
+    <div class="checkout">
+        <ul>
+         
+            <li class="cart-total">Total
+                <span id="cartTotal">Rs.{{total_price}}/-</span>
+            </li>
+        </ul>
+        <a href="/placeorder"class="proceed-btn">CHECKOUT NOW</a>
+    </div>
+</div>
+
+
+
+{% endblock %}

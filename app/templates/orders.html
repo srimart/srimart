@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block csslink %}
+<link rel="stylesheet" href="{% static 'css/orders.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Total cost : {{totalcost}}</h1>
+    {% for order_item in orderitem %}
+    <div class="order">
+        <div class="products">
+            <div class="product">
+                <img src="{{ order_item.products.productimage1.url }}" alt="">
+                <div class="product-details">
+                    <h5>{{ order_item.products.name }}</h5>
+                    <h3>Rs.{{ order_item.products.prize }}/-</h3>
+                    <h3>Rs.{{ order_item.status }}/-</h3>
+                    {% if order_item.status != 'On the Way' and order_item.status != 'Delivered' and order_item.status != 'cancel' %}
+                    <a href="/cancelorder/{{ order_item.id }}">Cancel Order</a>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

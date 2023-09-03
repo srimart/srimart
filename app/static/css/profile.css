@@ -1,0 +1,112 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the entire content */
+.pcontainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+     
+
+}
+
+/* Title */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.form {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 20rem;
+}
+
+/* Form inputs */
+.form input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: #007bff;
+}
+
+/* Submit button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* User details section */
+.user-details {
+    margin-top: 30px;
+    display: grid;
+    gap: 20px;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    font-size: x-large;
+}
+
+/* User card */
+.user-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: max-content;
+    height: max-content;
+
+}
+
+/* User info text */
+.user-info {
+    margin: 5px 0;
+}
+
+/* Delete button */
+.delete-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}

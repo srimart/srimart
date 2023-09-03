@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+
+
+<div class="auth-container authR">
+    <p class="auth-title">~ Register ~</p>
+    <form action="" method="post">
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+        {% csrf_token %}
+        {% for fm in form %}
+        {{fm.label_tag}}
+        {{fm}}
+        {{fm.errors | striptags}}
+        {% endfor %}
+        <input class='auth-btn' type="submit" value="Submit" />
+        <div class="auth-extrabtn" style="font-size: large;">
+            Already having an account ?
+            <a href="{% url 'login' %}">login</a>
+        </div>
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        {{error}}
+        {% endfor %}
+        {% endif %}
+    </form>
+</div>
