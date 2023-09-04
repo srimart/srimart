@@ -4,9 +4,14 @@
 <div class="auth-container">
   <p class="auth-title">~ Login ~</p>
   <form action="" method="post">
+              {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
     {% csrf_token %}
     {% for fm in form %}
-    
+
     {{fm.label_tag}}
     {{fm}}
     {{fm.errors | striptags}}
@@ -18,11 +23,11 @@
       <a href="{% url 'customerregistration'  %}" >create new account</a>
     </div>
     {% if form.non_field_errors %}
-    <div class="err">
+
       {% for error in form.non_field_errors %}
       {{error}}
       {% endfor %}
-    </div>
+
     {% endif %}
   </form>
 </div>
